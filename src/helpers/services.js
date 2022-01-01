@@ -1,0 +1,55 @@
+import services1 from "../img/home/services-1.jpg";
+
+export const servicesList = [
+  {
+    id: 1,
+    title: "Массаж 1",
+    icon: services1,
+    shotDescription: "Краткое описание",
+    description: "Полное описание",
+    price: "500 р.",
+    time: "90 мин",
+    link: "services/1",
+  },
+  {
+    id: 2,
+    title: "Массаж 2",
+    icon: services1,
+    shotDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque ducimus incidunt nihil obcaecati optio perspiciatis, quo soluta voluptate voluptatum. A accusamus accusantium est et, maiores optio ut voluptatum. Nihil.",
+    description: "Полное описание",
+    time: "50 мин",
+    price: "2500 р.",
+    link: "services/2",
+  },
+  {
+    id: 3,
+    title: "Массаж 3",
+    icon: services1,
+    shotDescription: "Краткое описание",
+    description: "Полное описание",
+    time: "60 мин",
+    price: "3200 р.",
+    link: "services/3",
+  },
+  {
+    id: 4,
+    title: "Не супер массаж",
+    icon: services1,
+    shotDescription: "Краткое описание",
+    description: "Полное описание",
+    time: "50000 мин",
+    price: "100 р.",
+    link: "services/4",
+  },
+  {
+    id: 5,
+    title: "Супер массаж",
+    icon: services1,
+    shotDescription: "Краткое описание",
+    description: "Полное описание",
+    time: "500 мин",
+    price: "5000 р",
+    link: "services/5",
+  },
+];
