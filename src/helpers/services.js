@@ -6,7 +6,8 @@ export const servicesList = [
     title: "Массаж 1",
     icon: services1,
     shotDescription: "Краткое описание",
-    description: "Полное описание",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi nemo ratione reprehenderit ut. Accusantium, beatae blanditiis delectus eius esse eum explicabo, impedit itaque molestias nisi placeat saepe tenetur voluptatibus.",
     price: "500 р.",
     time: "90 мин",
     link: "services/1",

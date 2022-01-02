@@ -41,8 +41,6 @@ const ServicesSorting = ({ setServices }) => {
       (service) => service.title === e.target.value
     )[0];
 
-    console.log(newActiveSort);
-
     setSorting((prev) =>
       prev.map((sort) => ({
         ...sort,
@@ -54,15 +52,20 @@ const ServicesSorting = ({ setServices }) => {
   };
 
   return (
-    <section>
-      <select value={activeSort.title} onChange={changeSorting}>
+    <div className="services__select-container">
+      <h2 className="services__select-title">Сортировать по:</h2>
+      <select
+        value={activeSort.title}
+        onChange={changeSorting}
+        className="services__select"
+      >
         {sorting.map((sort) => (
-          <option key={sort.id} value={sort.title}>
+          <option key={sort.id} value={sort.title} className="services__option">
             {sort.title}
           </option>
         ))}
       </select>
-    </section>
+    </div>
   );
 };
 
