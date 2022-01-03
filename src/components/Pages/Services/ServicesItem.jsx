@@ -2,7 +2,7 @@ import React from "react";
 
 const ServicesItem = ({ service }) => {
   return (
-    <div className="services__item service">
+    <li className="services__item service" id={service.id}>
       <div className="service__flex-container">
         <img src={service.icon} alt="" className="service__icon" />
       </div>
@@ -22,7 +22,7 @@ const ServicesItem = ({ service }) => {
           <p>{service.time}</p>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

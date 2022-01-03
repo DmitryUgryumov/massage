@@ -5,7 +5,7 @@ const NavHeader = () => {
   const history = useHistory();
 
   // нужно чтобы оба линка оставались активны ('Услуги' и 'Все')
-  const pushToURL = () => {
+  const pushURLHandler = () => {
     history.push("/services/all");
   };
 
@@ -34,7 +34,8 @@ const NavHeader = () => {
             </NavLink>
           </li>
 
-          <li className="nav__li" onClick={pushToURL}>
+          {/*<li className="nav__li" onClick={pushURLHandler}>*/}
+          <li className="nav__li">
             <NavLink
               to="/services"
               className="nav__link"

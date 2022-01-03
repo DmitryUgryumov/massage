@@ -2,7 +2,7 @@ import services1 from "../img/home/services-1.jpg";
 
 export const servicesList = [
   {
-    id: 1,
+    id: "a",
     title: "Массаж 1",
     icon: services1,
     shotDescription: "Краткое описание",
@@ -13,7 +13,7 @@ export const servicesList = [
     link: "services/1",
   },
   {
-    id: 2,
+    id: "b",
     title: "Массаж 2",
     icon: services1,
     shotDescription:
@@ -24,7 +24,7 @@ export const servicesList = [
     link: "services/2",
   },
   {
-    id: 3,
+    id: "c",
     title: "Массаж 3",
     icon: services1,
     shotDescription: "Краткое описание",
@@ -34,7 +34,7 @@ export const servicesList = [
     link: "services/3",
   },
   {
-    id: 4,
+    id: "d",
     title: "Не супер массаж",
     icon: services1,
     shotDescription: "Краткое описание",
@@ -44,7 +44,7 @@ export const servicesList = [
     link: "services/4",
   },
   {
-    id: 5,
+    id: "e",
     title: "Супер массаж",
     icon: services1,
     shotDescription: "Краткое описание",
