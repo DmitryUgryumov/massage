@@ -16,13 +16,13 @@ const SectionHomeServices = () => {
       <h2 className="section-title">Виды массажа</h2>
       <ul className="home-services__list">
         {servicesList.map((service) => (
-          <li
-            key={service.id}
-            className="home-services__item"
-            onClick={(e) => changeActiveServicesHandler(service.id)}
-          >
+          <li key={service.id} className="home-services__item">
             {/*<Link to={service.link} className="home-services__link_img">*/}
-            <Link to="/services" className="home-services__link_img">
+            <Link
+              to="/services"
+              className="home-services__link_img"
+              onClick={(e) => changeActiveServicesHandler(service.id)}
+            >
               <img
                 src={service.icon}
                 alt="Массаж"
@@ -32,7 +32,12 @@ const SectionHomeServices = () => {
 
             <h2 className="home-services__title">
               {/*<Link to={service.link}>{service.title}</Link>*/}
-              <Link to="/services">{service.title}</Link>
+              <Link
+                to="/services"
+                onClick={(e) => changeActiveServicesHandler(service.id)}
+              >
+                {service.title}
+              </Link>
             </h2>
 
             <p className="home-services__shot-description">
