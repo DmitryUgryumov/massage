@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/massage/static/css/main.6d30e8e3.css",
-    "main.js": "/massage/static/js/main.d0f6bde5.js",
+    "main.css": "/massage/static/css/main.cc6d5ee4.css",
+    "main.js": "/massage/static/js/main.db4eed5c.js",
     "static/media/bg-1.jpg": "/massage/static/media/bg-1.a44a069d21d0c57b3dfb.jpg",
     "static/media/bg-2.jpg": "/massage/static/media/bg-2.d80bfd91d30bf343ddc3.jpg",
+    "static/media/gallery-1.jpg": "/massage/static/media/gallery-1.4c599a26d813b5719dcf.jpg",
     "static/media/services-1.jpg": "/massage/static/media/services-1.4c599a26d813b5719dcf.jpg",
     "static/media/bg-3.jpg": "/massage/static/media/bg-3.292fd8338fc5d89d71cd.jpg",
+    "static/media/gallery-2.jpg": "/massage/static/media/gallery-2.cf1d6d965dda4e16d089.jpg",
     "index.html": "/massage/index.html",
-    "main.6d30e8e3.css.map": "/massage/static/css/main.6d30e8e3.css.map",
-    "main.d0f6bde5.js.map": "/massage/static/js/main.d0f6bde5.js.map"
+    "static/media/right-arrow.svg": "/massage/static/media/right-arrow.a2d1148746eb0e08bf672fb2bbdda35f.svg",
+    "static/media/left-arrow.svg": "/massage/static/media/left-arrow.875047b29bae7084274c1fd00f75acf0.svg",
+    "main.cc6d5ee4.css.map": "/massage/static/css/main.cc6d5ee4.css.map",
+    "main.db4eed5c.js.map": "/massage/static/js/main.db4eed5c.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d30e8e3.css",
-    "static/js/main.d0f6bde5.js"
+    "static/css/main.cc6d5ee4.css",
+    "static/js/main.db4eed5c.js"
   ]
 }
