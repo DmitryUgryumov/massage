@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import right from "../../img/gallery/right-arrow.svg";
 import left from "../../img/gallery/left-arrow.svg";
 
 const ModalWindow = ({ modalImages, setShowModal }) => {
   const [index, setIndex] = useState(modalImages.index);
+  const img = useRef(null);
+  const indexSpan = useRef(null);
 
   useEffect(() => {
     document.documentElement.addEventListener("keydown", modalKeyDownHandler);
+    document.body.style.overflow = "hidden";
 
     return () => {
       document.documentElement.removeEventListener(
         "keydown",
         modalKeyDownHandler
       );
+
+      document.body.style.overflow = "auto";
     };
   }, []);
 
@@ -35,10 +40,8 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
     setIndex((prev) => (prev === 0 ? modalImages.images.length - 1 : prev - 1));
 
   const closeModal = (e) => {
-    console.log(e.target);
     if (
       e.target.className === "modal__container" ||
-      e.target.className === "modal__img" ||
       e.target.className === "modal__index" ||
       e.target.className === "modal__button" ||
       e.target.tagName === "IMG"
@@ -46,7 +49,14 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
       return false;
     }
 
-    setShowModal(false);
+    img.current.classList.add("modal__img_closed");
+    indexSpan.current.classList.add("modal__index_closed");
+
+    setTimeout(() => {
+      img.current.classList.remove("modal__img_closed");
+      indexSpan.current.classList.remove("modal__index_closed");
+      setShowModal(false);
+    }, 280);
   };
 
   return (
@@ -56,8 +66,9 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
           src={modalImages.images[index].icon}
           alt=""
           className="modal__img"
+          ref={img}
         />
-        <span className="modal__index">
+        <span className="modal__index" ref={indexSpan}>
           {`${index + 1}/${modalImages.images.length}`}
         </span>
       </div>

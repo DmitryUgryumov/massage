@@ -16,7 +16,11 @@ function App() {
   const [activeService, setActiveService] = useState(null);
 
   const [showModal, setShowModal] = useState(false);
-  const [modalImages, setModalImages] = useState({ images: [], index: null });
+  const [modalImages, setModalImages] = useState({
+    images: [],
+    index: null,
+    location: "",
+  });
 
   return (
     <>

@@ -22,6 +22,7 @@ const Gallery = () => {
     setModalImages({
       images: galleryImages,
       index: galleryImages.indexOf(img),
+      location: window.location.href,
     });
 
     setShowModal(true);

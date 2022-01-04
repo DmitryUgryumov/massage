@@ -92,6 +92,10 @@ a {
 .modal__img {
   width: 100%;
   height: auto;
+  animation: modal-img-open 0.3s linear;
+}
+.modal__img_closed {
+  animation: modal-img-closed 0.3s linear;
 }
 .modal__index {
   position: absolute;
@@ -99,6 +103,10 @@ a {
   top: 10px;
   color: black;
   font-weight: 700;
+  animation: modal-index 0.3s linear;
+}
+.modal__index_closed {
+  opacity: 0;
 }
 .modal__button {
   position: absolute;
@@ -404,6 +412,51 @@ a {
     opacity: 0;
   }
   50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes modal-img-open {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 50%;
+    height: auto;
+    opacity: 0.5;
+  }
+  100% {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+}
+@keyframes modal-img-closed {
+  0% {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+  50% {
+    width: 50%;
+    height: auto;
+    opacity: 0.5;
+  }
+  100% {
+    width: 0;
+    height: auto;
+    opacity: 0;
+  }
+}
+@keyframes modal-index {
+  0% {
+    opacity: 0;
+  }
+  99% {
     opacity: 0;
   }
   100% {

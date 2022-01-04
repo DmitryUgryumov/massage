@@ -120,7 +120,13 @@ a {
   &__img {
     width: 100%;
     height: auto;
+    animation: modal-img-open .3s linear;
   }
+
+  &__img_closed {
+    animation: modal-img-closed .3s linear;
+  }
+
 
   &__index {
     position: absolute;
@@ -128,6 +134,11 @@ a {
     top: 10px;
     color: black;
     font-weight: 700;
+    animation: modal-index .3s linear;
+  }
+
+  &__index_closed {
+    opacity: 0;
   }
 
   &__button {
@@ -524,3 +535,44 @@ a {
   }
 }
 
+@keyframes modal-img-open {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 50%;
+    height: auto;
+    opacity: .5;
+  }
+  100% {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+}
+
+@keyframes modal-img-closed {
+  0% {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+  50% {
+    width: 50%;
+    height: auto;
+    opacity: .5;
+  }
+  100% {
+    width: 0;
+    height: auto;
+    opacity: 0;
+  }
+}
+
+@keyframes modal-index {
+  0%{opacity: 0}
+  99%{opacity: 0}
+  100%{opacity: 1}
+}
