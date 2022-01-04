@@ -10,16 +10,27 @@ import Recording from "./Pages/Recording";
 import MapScripts from "./Scripts/MapScripts";
 import Context from "./Context/Context";
 import { useState } from "react";
+import ModalWindow from "./ModalWindow/ModalWindow";
 
 function App() {
   const [activeService, setActiveService] = useState(null);
+
+  const [showModal, setShowModal] = useState(false);
+  const [modalImages, setModalImages] = useState({ images: [], index: null });
 
   return (
     <>
       <NavHeader />
 
       <Switch>
-        <Context.Provider value={{ activeService, setActiveService }}>
+        <Context.Provider
+          value={{
+            activeService,
+            setActiveService,
+            setShowModal,
+            setModalImages,
+          }}
+        >
           <Route exact path="/">
             <Home />
           </Route>
@@ -45,6 +56,10 @@ function App() {
           </Route>
         </Context.Provider>
       </Switch>
+
+      {showModal ? (
+        <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />
+      ) : null}
     </>
   );
 }
