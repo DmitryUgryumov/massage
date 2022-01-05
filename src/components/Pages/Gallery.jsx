@@ -12,9 +12,9 @@ const Gallery = () => {
 
   for (let i = 1; i < 11; i++) {
     if (i % 2 === 0) {
-      galleryImages.push({ id: i, icon: gallery1 });
+      galleryImages.push({ id: i, img: gallery1 });
     } else {
-      galleryImages.push({ id: i, icon: gallery2 });
+      galleryImages.push({ id: i, img: gallery2 });
     }
   }
 
@@ -35,7 +35,7 @@ const Gallery = () => {
           {galleryImages.map((imgItem) => (
             <li key={imgItem.id} className="gallery__item">
               <img
-                src={imgItem.icon}
+                src={imgItem.img}
                 alt="Фото"
                 className="gallery__img modal-img"
                 onClick={() => showModalHandler(imgItem)}

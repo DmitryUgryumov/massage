@@ -75,7 +75,8 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: none;
+  transition: background-color 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,10 +93,10 @@ a {
 .modal__img {
   width: 100%;
   height: auto;
-  animation: modal-img-open 0.3s linear;
+  animation: modal-img-open 0.5s linear;
 }
 .modal__img_closed {
-  animation: modal-img-closed 0.3s linear;
+  animation: modal-img-closed 0.5s linear;
 }
 .modal__index {
   position: absolute;
@@ -103,7 +104,7 @@ a {
   top: 10px;
   color: black;
   font-weight: 700;
-  animation: modal-index 0.3s linear;
+  animation: modal-index 0.5s linear;
 }
 .modal__index_closed {
   opacity: 0;
@@ -265,7 +266,7 @@ a {
 .home .home-services__link_img:hover:after {
   background: rgba(0, 0, 0, 0.25);
 }
-.home .home-services__icon {
+.home .home-services__img {
   width: 100%;
   height: auto;
   transition: width 0.5s;
@@ -322,7 +323,7 @@ a {
   flex-basis: 60%;
   padding-left: 30px;
 }
-.services .service__icon {
+.services .service__img {
   max-width: 100%;
   height: auto;
 }
@@ -422,7 +423,7 @@ a {
   0% {
     width: 0;
     height: 0;
-    opacity: 0;
+    opacity: 0.3;
   }
   50% {
     width: 50%;
@@ -449,7 +450,7 @@ a {
   100% {
     width: 0;
     height: auto;
-    opacity: 0;
+    opacity: 0.3;
   }
 }
 @keyframes modal-index {

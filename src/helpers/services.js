@@ -4,7 +4,7 @@ export const servicesList = [
   {
     id: "a",
     title: "Массаж 1",
-    icon: services1,
+    img: services1,
     shotDescription: "Краткое описание",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi nemo ratione reprehenderit ut. Accusantium, beatae blanditiis delectus eius esse eum explicabo, impedit itaque molestias nisi placeat saepe tenetur voluptatibus.",
@@ -15,7 +15,7 @@ export const servicesList = [
   {
     id: "b",
     title: "Массаж 2",
-    icon: services1,
+    img: services1,
     shotDescription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque ducimus incidunt nihil obcaecati optio perspiciatis, quo soluta voluptate voluptatum. A accusamus accusantium est et, maiores optio ut voluptatum. Nihil.",
     description: "Полное описание",
@@ -26,7 +26,7 @@ export const servicesList = [
   {
     id: "c",
     title: "Массаж 3",
-    icon: services1,
+    img: services1,
     shotDescription: "Краткое описание",
     description: "Полное описание",
     time: "60 мин",
@@ -36,7 +36,7 @@ export const servicesList = [
   {
     id: "d",
     title: "Не супер массаж",
-    icon: services1,
+    img: services1,
     shotDescription: "Краткое описание",
     description: "Полное описание",
     time: "50000 мин",
@@ -46,7 +46,7 @@ export const servicesList = [
   {
     id: "e",
     title: "Супер массаж",
-    icon: services1,
+    img: services1,
     shotDescription: "Краткое описание",
     description: "Полное описание",
     time: "500 мин",

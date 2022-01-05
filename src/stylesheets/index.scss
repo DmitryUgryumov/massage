@@ -102,7 +102,9 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, .7);
+  //background: rgba(0, 0, 0, .7);
+  background: none;
+  transition: background-color .5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,11 +122,11 @@ a {
   &__img {
     width: 100%;
     height: auto;
-    animation: modal-img-open .3s linear;
+    animation: modal-img-open .5s linear;
   }
 
   &__img_closed {
-    animation: modal-img-closed .3s linear;
+    animation: modal-img-closed .5s linear;
   }
 
 
@@ -134,7 +136,7 @@ a {
     top: 10px;
     color: black;
     font-weight: 700;
-    animation: modal-index .3s linear;
+    animation: modal-index .5s linear;
   }
 
   &__index_closed {
@@ -349,7 +351,7 @@ a {
     }
 
 
-    &__icon {
+    &__img {
       width: 100%;
       height: auto;
       transition: width .5s;
@@ -421,7 +423,7 @@ a {
       padding-left: 30px;
     }
 
-    &__icon {
+    &__img {
       max-width: 100%;
       height: auto;
     }
@@ -539,7 +541,7 @@ a {
   0% {
     width: 0;
     height: 0;
-    opacity: 0;
+    opacity: .3;
   }
   50% {
     width: 50%;
@@ -567,7 +569,7 @@ a {
   100% {
     width: 0;
     height: auto;
-    opacity: 0;
+    opacity: .3;
   }
 }
 

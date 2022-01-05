@@ -24,9 +24,9 @@ const SectionHomeServices = () => {
               onClick={(e) => changeActiveServicesHandler(service.id)}
             >
               <img
-                src={service.icon}
+                src={service.img}
                 alt="Массаж"
-                className="home-services__icon"
+                className="home-services__img"
               />
             </Link>
 

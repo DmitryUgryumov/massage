@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../../Context/Context";
 
 const ServicesItem = ({ service }) => {
+  const { setShowModal, setModalImages } = useContext(Context);
+
+  const showModalHandler = () => {
+    setModalImages({
+      images: [{ id: 1, img: service.img }],
+      index: 0,
+      location: window.location.href,
+    });
+
+    setShowModal(true);
+  };
+
   return (
     <li className="services__item service" id={service.id}>
       <div className="service__flex-container">
-        <img src={service.icon} alt="" className="service__icon" />
+        <img
+          src={service.img}
+          alt=""
+          className="service__img modal-img"
+          onClick={showModalHandler}
+        />
       </div>
       <div className="service__flex-container">
         <h2 className="service__title">{service.title}</h2>
