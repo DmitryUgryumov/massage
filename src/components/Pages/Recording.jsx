@@ -1,7 +1,7 @@
 import React from "react";
 
 const Recording = () => {
-  return <div>RECORDING</div>;
+  return <main className="recording">RECORDING</main>;
 };
 
 export default Recording;

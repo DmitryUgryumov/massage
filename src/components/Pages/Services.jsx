@@ -12,11 +12,17 @@ const Services = () => {
 
   useEffect(() => {
     if (activeService) {
+      const activeServiceIndex = services.findIndex(
+        (service) => service.id === activeService
+      );
+      console.log(activeServiceIndex);
       const service = document.querySelector(`#${activeService}`);
       service.classList.add("services__item_active");
       service.scrollIntoView();
 
-      document.documentElement.scrollTop -= service.scrollHeight / 2;
+      if (activeServiceIndex !== services.length - 1) {
+        document.documentElement.scrollTop -= service.scrollHeight / 2;
+      }
     }
 
     return function () {

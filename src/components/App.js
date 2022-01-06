@@ -11,6 +11,7 @@ import MapScripts from "./Scripts/MapScripts";
 import Context from "./Context/Context";
 import { useState } from "react";
 import ModalWindow from "./ModalWindow/ModalWindow";
+import Footer from "./Footer/Footer";
 
 function App() {
   const [activeService, setActiveService] = useState(null);
@@ -60,6 +61,8 @@ function App() {
           </Route>
         </Context.Provider>
       </Switch>
+
+      <Footer />
 
       {showModal ? (
         <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />

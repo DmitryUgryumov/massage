@@ -11,6 +11,21 @@ const noHiddenClasses = [
   "modal__arrow",
 ];
 
+const getScrollBarWidth = () => {
+  const div = document.createElement("div");
+
+  div.style.overflowY = "scroll";
+  div.style.width = "50px";
+  div.style.height = "50px";
+  div.style.visibility = "hidden";
+
+  document.body.appendChild(div);
+  const scrollWidth = div.offsetWidth - div.clientWidth;
+  document.body.removeChild(div);
+
+  return scrollWidth;
+};
+
 const ModalWindow = ({ modalImages, setShowModal }) => {
   const [index, setIndex] = useState(modalImages.index);
   const img = useRef(null);
@@ -19,7 +34,11 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
 
   useEffect(() => {
     document.documentElement.addEventListener("keydown", modalKeyDownHandler);
+
     document.body.style.overflow = "hidden";
+    document.body.style.marginRight = getScrollBarWidth() + "px";
+    document.querySelector(".nav").style.paddingRight =
+      getScrollBarWidth() + "px";
     modal.current.style.background = "rgba(0, 0, 0, .7)";
 
     return () => {
@@ -27,7 +46,10 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
         "keydown",
         modalKeyDownHandler
       );
+
       document.body.style.overflow = "auto";
+      document.body.style.marginRight = "0";
+      document.querySelector(".nav").style.paddingRight = "0";
     };
   }, []);
 
@@ -62,6 +84,7 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
     if (noHiddenClasses.includes(e.target.className)) {
       return false;
     }
+
     img.current.classList.add("modal__img_closed");
     indexSpan.current.classList.add("modal__index_closed");
     modal.current.style.background = "rgba(0, 0, 0, 0)";
@@ -74,7 +97,7 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
       img.current.classList.remove("modal__img_closed");
       indexSpan.current.classList.remove("modal__index_closed");
       setShowModal(false);
-    }, 450);
+    }, 480);
   };
 
   return (
@@ -86,7 +109,11 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
           className="modal__img"
           ref={img}
         />
-        <span className="modal__index" ref={indexSpan}>
+        <span
+          className="modal__index"
+          ref={indexSpan}
+          style={modalImages.images.length > 1 ? {} : { display: "none" }}
+        >
           {`${index + 1}/${modalImages.images.length}`}
         </span>
       </div>

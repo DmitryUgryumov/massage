@@ -7,16 +7,24 @@ $link-color: #191970;
 $link-background-color: #6495ED;
 $link-active-color: #0000FF;
 
-@mixin home-bg($bg) {
-  content: '';
-  position: absolute;
-  top:0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: $bg;
+@mixin footer-link($url-black, $url-color) {
+  background: url($url-black);
   background-size: cover;
-  height: 800px;
+
+  &:hover {
+    background: url($url-color);
+    background-size: cover;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 * {
@@ -33,13 +41,28 @@ html {
 body {
   background: $main-background-color;
   font-family: 'Roboto', sans-serif;
-  //padding: 0 15px;
   color: $main-text-color;
 }
 
 a {
   text-decoration: none;
   color: $link-color
+}
+
+.section-title {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.modal-img {
+  cursor: pointer;
+}
+
+.map {
+  width: 80%;
+  height: 500px;
+  margin: 100px auto;
 }
 
 .nav {
@@ -49,6 +72,7 @@ a {
   top:0;
   left: 0;
   right: 0;
+  //padding-right: 300px;
 
 
   &__ul {
@@ -77,22 +101,6 @@ a {
     color: $link-active-color;
     background: $link-background-color;
   }
-}
-
-.section-title {
-  text-align: center;
-  padding-top: 30px;
-  margin-bottom: 30px;
-}
-
-.modal-img {
-  cursor: pointer;
-}
-
-.map {
-  width: 80%;
-  height: 500px;
-  margin: 100px auto;
 }
 
 .modal {
@@ -177,8 +185,92 @@ a {
   }
 }
 
+.footer {
+  width: 100%;
+  background: rgba(0, 0, 0, .6);
 
-.services, .gallery {
+  a {
+    span {
+      color:$main-text-color;
+      transition: color .5s;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+
+  &__container {
+    padding: 15px;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #F5F5F5;
+    font-size: 1.2rem;
+  }
+
+  &__mail, &__tel,&__socials {
+    flex-basis: 33.33%;
+  }
+  &__tel {
+    text-align: center;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__link + &__link {
+  }
+
+  &__link {
+    display: flex;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    transition: background .5s;
+
+    &:hover {
+      background-size: cover;
+    }
+  }
+
+  &__link:nth-child(1) {
+    @include footer-link(
+        "../img/footer/social-icon-1-black.png",
+        "../img/footer/social-icon-1.png"
+    );
+  }
+
+  &__link:nth-child(2) {
+    @include footer-link(
+        "../img/footer/social-icon-2-black.png",
+        "../img/footer/social-icon-2.png"
+    );
+  }
+
+  &__link:nth-child(3) {
+    @include footer-link(
+        "../img/footer/social-icon-3-black.png",
+        "../img/footer/social-icon-3.png"
+    );
+  }
+
+  &__link:nth-child(4) {
+    @include footer-link(
+        "../img/footer/social-icon-4-black.png",
+        "../img/footer/social-icon-4.png"
+    );
+  }
+}
+
+
+.services, .gallery,
+.about, .contacts, .recording {
   margin-top: 100px;
 }
 
@@ -385,7 +477,7 @@ a {
 }
 
 .services {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 
   &__nav-list {
     max-width: 920px;
@@ -459,7 +551,7 @@ a {
   }
 
   &__list {
-    padding-bottom: 100px;
+    //padding-bottom: 100px;
   }
 
 
@@ -505,6 +597,8 @@ a {
 
 }
 
+
+
 @keyframes home-slides {
   0% {opacity:0;}
   6% {opacity:1;}
@@ -539,37 +633,30 @@ a {
 
 @keyframes modal-img-open {
   0% {
-    width: 0;
-    height: 0;
-    opacity: .3;
+    transform: scale(0, 0);
   }
+
   50% {
-    width: 50%;
-    height: auto;
-    opacity: .5;
+    transform: scale(.5, .5);
   }
   100% {
-    width: 100%;
-    height: auto;
+    transform: scale(1, 1);
     opacity: 1;
   }
 }
 
 @keyframes modal-img-closed {
   0% {
-    width: 100%;
-    height: auto;
+    transform: scale(1, 1);
     opacity: 1;
   }
   50% {
-    width: 50%;
-    height: auto;
+    transform: scale(.5, .5);
     opacity: .5;
   }
   100% {
-    width: 0;
-    height: auto;
-    opacity: .3;
+    transform: scale(0, 0);
+    opacity: 0;
   }
 }
 
