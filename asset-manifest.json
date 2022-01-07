@@ -1,21 +1,26 @@
 {
   "files": {
-    "main.css": "/massage/static/css/main.b841b406.css",
-    "main.js": "/massage/static/js/main.e3dab378.js",
+    "main.css": "/massage/static/css/main.1b0028e8.css",
+    "main.js": "/massage/static/js/main.b765827b.js",
+    "static/media/man-1.jpg": "/massage/static/media/man-1.fede4dec5062d47dbed8.jpg",
     "static/media/bg-1.jpg": "/massage/static/media/bg-1.a44a069d21d0c57b3dfb.jpg",
+    "static/media/certificate-1.jpg": "/massage/static/media/certificate-1.192d04817c958bf3c044.jpg",
+    "static/media/man-2.jpg": "/massage/static/media/man-2.19a9d2a38f3e420cea6f.jpg",
     "static/media/bg-2.jpg": "/massage/static/media/bg-2.d80bfd91d30bf343ddc3.jpg",
     "static/media/gallery-1.jpg": "/massage/static/media/gallery-1.4c599a26d813b5719dcf.jpg",
     "static/media/services-1.jpg": "/massage/static/media/services-1.4c599a26d813b5719dcf.jpg",
+    "static/media/certificate-2.jpg": "/massage/static/media/certificate-2.bb0e9135aa3ca6f1a939.jpg",
     "static/media/bg-3.jpg": "/massage/static/media/bg-3.292fd8338fc5d89d71cd.jpg",
+    "static/media/man-3.jpg": "/massage/static/media/man-3.42c3df2a6f76010a98a5.jpg",
     "static/media/gallery-2.jpg": "/massage/static/media/gallery-2.cf1d6d965dda4e16d089.jpg",
     "index.html": "/massage/index.html",
     "static/media/right-arrow.svg": "/massage/static/media/right-arrow.a2d1148746eb0e08bf672fb2bbdda35f.svg",
     "static/media/left-arrow.svg": "/massage/static/media/left-arrow.875047b29bae7084274c1fd00f75acf0.svg",
-    "main.b841b406.css.map": "/massage/static/css/main.b841b406.css.map",
-    "main.e3dab378.js.map": "/massage/static/js/main.e3dab378.js.map"
+    "main.1b0028e8.css.map": "/massage/static/css/main.1b0028e8.css.map",
+    "main.b765827b.js.map": "/massage/static/js/main.b765827b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b841b406.css",
-    "static/js/main.e3dab378.js"
+    "static/css/main.1b0028e8.css",
+    "static/js/main.b765827b.js"
   ]
 }
