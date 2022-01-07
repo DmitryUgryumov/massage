@@ -597,6 +597,71 @@ a {
 
 }
 
+.about {
+  &__content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__img-man {
+    width: 30%;
+    height: auto;
+  }
+
+  &__description + &__description {
+    margin-top: 30px;
+  }
+  &__description {
+    padding-left: 20px;
+    text-indent: 30px;
+    line-height: 30px;
+  }
+}
+
+.slider {
+  max-width: 1600px;
+  margin: 70px auto 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    flex-basis: 10%;
+    padding: 30px 0;
+  }
+
+  &__container {
+    width: 70%;
+    overflow: hidden;
+    border: 1px gray solid;
+
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      // 100% * кол-во картинок в слайдере
+      //width: 200%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transition: margin-left 250ms;
+      font-size: 0;
+
+      li {
+        width: 50%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
 
 
 @keyframes home-slides {

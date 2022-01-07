@@ -6,7 +6,7 @@ const ServicesItem = ({ service }) => {
 
   const showModalHandler = () => {
     setModalImages({
-      images: [{ id: 1, img: service.img }],
+      images: [service.img],
       index: 0,
       location: window.location.href,
     });

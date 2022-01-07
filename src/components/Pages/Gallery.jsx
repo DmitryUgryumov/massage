@@ -20,7 +20,7 @@ const Gallery = () => {
 
   const showModalHandler = (img) => {
     setModalImages({
-      images: galleryImages,
+      images: galleryImages.map((img) => img.img),
       index: galleryImages.indexOf(img),
       location: window.location.href,
     });

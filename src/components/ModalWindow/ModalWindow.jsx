@@ -33,12 +33,20 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
   const modal = useRef(null);
 
   useEffect(() => {
+    const pageHasScrollBar = !!(
+      document.body.offsetHeight - window.innerHeight
+    );
+
     document.documentElement.addEventListener("keydown", modalKeyDownHandler);
 
     document.body.style.overflow = "hidden";
-    document.body.style.marginRight = getScrollBarWidth() + "px";
-    document.querySelector(".nav").style.paddingRight =
-      getScrollBarWidth() + "px";
+
+    if (pageHasScrollBar) {
+      document.body.style.marginRight = getScrollBarWidth() + "px";
+      document.querySelector(".nav").style.paddingRight =
+        getScrollBarWidth() + "px";
+    }
+
     modal.current.style.background = "rgba(0, 0, 0, .7)";
 
     return () => {
@@ -48,8 +56,11 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
       );
 
       document.body.style.overflow = "auto";
-      document.body.style.marginRight = "0";
-      document.querySelector(".nav").style.paddingRight = "0";
+
+      if (pageHasScrollBar) {
+        document.body.style.marginRight = "0";
+        document.querySelector(".nav").style.paddingRight = "0";
+      }
     };
   }, []);
 
@@ -104,16 +115,13 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
     <div className="modal" ref={modal} onClick={closeModal}>
       <div className="modal__container">
         <img
-          src={modalImages.images[index].img}
+          // src={modalImages.images[index].img}
+          src={modalImages.images[index]}
           alt=""
           className="modal__img"
           ref={img}
         />
-        <span
-          className="modal__index"
-          ref={indexSpan}
-          style={modalImages.images.length > 1 ? {} : { display: "none" }}
-        >
+        <span className="modal__index" ref={indexSpan}>
           {`${index + 1}/${modalImages.images.length}`}
         </span>
       </div>
