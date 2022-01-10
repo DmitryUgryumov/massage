@@ -6,7 +6,7 @@ console.log(123);
 // function init() {
 //   const map = document.querySelector(".map");
 //
-//   var myMap = new ymaps.Map(
+//   var myMap = new ymaps.MyMap(
 //     map,
 //     {
 //       center: [56.840262, 60.677721],

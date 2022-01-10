@@ -6,8 +6,6 @@ import NavHeader from "./Nav/NavHeader";
 import About from "./Pages/About";
 import Gallery from "./Pages/Gallery";
 import Contacts from "./Pages/Contacts";
-import Recording from "./Pages/Recording";
-import MapScripts from "./Scripts/MapScripts";
 import Context from "./Context/Context";
 import { useState } from "react";
 import ModalWindow from "./ModalWindow/ModalWindow";
@@ -54,10 +52,6 @@ function App() {
 
           <Route path="/contacts">
             <Contacts />
-          </Route>
-
-          <Route path="/recording">
-            <Recording />
           </Route>
         </Context.Provider>
       </Switch>

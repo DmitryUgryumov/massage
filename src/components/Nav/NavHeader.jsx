@@ -2,13 +2,6 @@ import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 
 const NavHeader = () => {
-  const history = useHistory();
-
-  // нужно чтобы оба линка оставались активны ('Услуги' и 'Все')
-  const pushURLHandler = () => {
-    history.push("/services/all");
-  };
-
   return (
     <header>
       <nav className="nav">
@@ -34,7 +27,6 @@ const NavHeader = () => {
             </NavLink>
           </li>
 
-          {/*<li className="nav__li" onClick={pushURLHandler}>*/}
           <li className="nav__li">
             <NavLink
               to="/services"
@@ -62,16 +54,6 @@ const NavHeader = () => {
               activeClassName="nav__link nav__link_active"
             >
               Контакты
-            </NavLink>
-          </li>
-
-          <li className="nav__li">
-            <NavLink
-              to="/recording"
-              className="nav__link"
-              activeClassName="nav__link nav__link_active"
-            >
-              Запись
             </NavLink>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
-const Map = () => {
+const MyMap = () => {
   return <div className="map"></div>;
 };
 
-export default Map;
+export default MyMap;

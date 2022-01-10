@@ -41,7 +41,9 @@ const Slider = ({ images, showModalHandler }) => {
   return (
     <div className="slider">
       <button type="button" onClick={imgPrev}>
-        prev
+        <svg className="strelka-left-1" viewBox="0 0 60 100">
+          <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"></path>
+        </svg>
       </button>
       <div className="slider__container">
         <ul ref={ul} style={{ width: `${images.length * 100}%` }}>
@@ -58,7 +60,9 @@ const Slider = ({ images, showModalHandler }) => {
         </ul>
       </div>
       <button type="button" onClick={imgNext}>
-        next
+        <svg className="strelka-right-1" viewBox="0 0 60 100">
+          <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"></path>
+        </svg>
       </button>
     </div>
   );
