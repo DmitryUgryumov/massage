@@ -7,6 +7,12 @@ $link-color: #191970;
 $link-background-color: #6495ED;
 $link-active-color: #0000FF;
 
+
+$dark-1: #1c1c1c;
+$blue-1: #BACBD9;
+$blue-2: #D8e8F2;
+$blue-3: #F0FFFF;
+
 @mixin footer-link($url-black, $url-color) {
   background: url($url-black);
   background-size: cover;
@@ -40,13 +46,16 @@ html {
 
 body {
   background: $main-background-color;
+  //background: $blue-3;
   font-family: 'Roboto', sans-serif;
-  color: $main-text-color;
+  //color: $main-text-color;
+  color: $dark-1;
+  //color: #2B3640;
 }
 
 a {
   text-decoration: none;
-  color: $link-color
+  color: $dark-1;
 }
 
 .section-title {
@@ -95,7 +104,8 @@ a {
 }
 
 .nav {
-  background: rgba(0, 0, 0, 0.3);
+  //background: rgba(0, 0, 0, 0.3);
+  background: rgba(186, 203, 217, .5);
   position: absolute;
   z-index: 60;
   top:0;
@@ -118,7 +128,7 @@ a {
   &__link {
     display: inline-block;
     padding: 15px 10px;
-    transition: background-color .5s, color .5s;
+    transition: background-color .5s;
     border-radius: 5px;
 
     &:hover {
@@ -216,7 +226,8 @@ a {
 
 .footer {
   width: 100%;
-  background: rgba(0, 0, 0, .6);
+  //background: rgba(0, 0, 0, .6);
+  background: $blue-1;
 
   a {
     span {
@@ -316,6 +327,7 @@ a {
     &__slides {
       z-index: -2;
       background: linear-gradient(180deg, rgba(192,192,192,1) 0%, rgba(211,211,211,1) 35%, rgba(245,245,245,1) 100%); // поборать цвет под текст и картинки одного тона
+      //background: linear-gradient(180deg, rgba(186,203,217,1) 0%, rgba(216,232,242,1) 35%, rgba(240,255,255,1) 100%);
       width: 100%;
       //height: 100%;
       height: 800px;
@@ -417,8 +429,10 @@ a {
 
   .home-services {
     margin-top: 100px;
-    background: $second-background-color;
-
+    padding-bottom: 30px;
+    //margin: 100px 0;
+    //background: $second-background-color;
+    //background: $blue-2;
     &__list {
       max-width: 1400px;
       margin: 0 auto;
@@ -520,13 +534,26 @@ a {
   &__select-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
     //border: 1px blue solid;
     margin-top: 30px;
+    //border:  1px blue solid;
+
   }
 
   &__select-title {
     margin-right: 30px;
+
+    //border:  1px blue solid;
+  }
+
+  &__select {
+    padding: 0 5px;
+    //border:  1px blue solid;
+  }
+
+  &__option {
+    padding: 10px;
   }
 
   .service {
@@ -548,6 +575,7 @@ a {
 
     &__img {
       max-width: 100%;
+      border-radius: 10px;
       height: auto;
     }
 
@@ -675,7 +703,7 @@ a {
     height: 780px;
     //width: 780px;
     overflow: hidden;
-    border: 1px gray solid;
+    //border: 1px gray solid;
 
     ul {
       display: flex;
@@ -818,7 +846,7 @@ a {
       border: none;
       padding: 10px 5px;
       background: none;
-      border-bottom: 3px black solid;
+      border-bottom: 3px $dark-1 solid;
 
       &:focus {
         outline: none;
@@ -828,7 +856,7 @@ a {
 
     button {
       margin-top: 40px;
-      border: 1.5px gray solid;
+      border: 2px $blue-1 solid;
       background: none;
       outline: none;
       cursor: pointer;
@@ -836,7 +864,7 @@ a {
       transition: background-color .5s;
 
       &:hover {
-        background: gray;
+        background: $blue-1;
       }
     }
 

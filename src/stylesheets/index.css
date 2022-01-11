@@ -23,12 +23,12 @@ html {
 body {
   background: #F5F5F5;
   font-family: "Roboto", sans-serif;
-  color: #000000;
+  color: #1c1c1c;
 }
 
 a {
   text-decoration: none;
-  color: #191970;
+  color: #1c1c1c;
 }
 
 .section-title {
@@ -71,7 +71,7 @@ a {
 }
 
 .nav {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(186, 203, 217, 0.5);
   position: absolute;
   z-index: 60;
   top: 0;
@@ -90,7 +90,7 @@ a {
 .nav__link {
   display: inline-block;
   padding: 15px 10px;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 0.5s;
   border-radius: 5px;
 }
 .nav__link:hover {
@@ -172,7 +172,7 @@ a {
 
 .footer {
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: #BACBD9;
 }
 .footer a span {
   color: #000000;
@@ -336,7 +336,7 @@ a {
 }
 .home .home-services {
   margin-top: 100px;
-  background: #F0FFFF;
+  padding-bottom: 30px;
 }
 .home .home-services__list {
   max-width: 1400px;
@@ -411,11 +411,16 @@ a {
 .services__select-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-top: 30px;
 }
 .services__select-title {
   margin-right: 30px;
+}
+.services__select {
+  padding: 0 5px;
+}
+.services__option {
+  padding: 10px;
 }
 .services .service {
   border: 1px gray solid;
@@ -434,6 +439,7 @@ a {
 }
 .services .service__img {
   max-width: 100%;
+  border-radius: 10px;
   height: auto;
 }
 .services .service__title {
@@ -525,7 +531,6 @@ a {
   width: 70%;
   height: 780px;
   overflow: hidden;
-  border: 1px gray solid;
 }
 .slider__container ul {
   display: flex;
@@ -642,7 +647,7 @@ a {
   border: none;
   padding: 10px 5px;
   background: none;
-  border-bottom: 3px black solid;
+  border-bottom: 3px #1c1c1c solid;
 }
 .contacts__form input:focus {
   outline: none;
@@ -650,7 +655,7 @@ a {
 }
 .contacts__form button {
   margin-top: 40px;
-  border: 1.5px gray solid;
+  border: 2px #BACBD9 solid;
   background: none;
   outline: none;
   cursor: pointer;
@@ -658,7 +663,7 @@ a {
   transition: background-color 0.5s;
 }
 .contacts__form button:hover {
-  background: gray;
+  background: #BACBD9;
 }
 @keyframes home-slides {
   0% {

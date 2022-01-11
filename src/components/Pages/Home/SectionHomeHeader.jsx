@@ -10,8 +10,10 @@ const SectionHomeHeader = () => {
       </ul>
 
       <div className="home-header__content">
-        <h2 className="home-header__title">Массаж</h2>
-        <p className="home-header__description">Краткое описание</p>
+        <h2 className="home-header__title">Мастерская здоровья</h2>
+        <p className="home-header__description">
+          Услуги массажа в Екатеринбурге
+        </p>
       </div>
     </section>
   );
