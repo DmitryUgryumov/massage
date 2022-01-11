@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/massage/static/css/main.f1e27f86.css",
-    "main.js": "/massage/static/js/main.b1757810.js",
+    "main.css": "/massage/static/css/main.37fabf4c.css",
+    "main.js": "/massage/static/js/main.7d201acb.js",
     "static/media/man-1.jpg": "/massage/static/media/man-1.fede4dec5062d47dbed8.jpg",
     "static/media/bg-1.jpg": "/massage/static/media/bg-1.a44a069d21d0c57b3dfb.jpg",
     "static/media/certificate-1.jpg": "/massage/static/media/certificate-1.192d04817c958bf3c044.jpg",
@@ -16,11 +16,11 @@
     "index.html": "/massage/index.html",
     "static/media/right-arrow.svg": "/massage/static/media/right-arrow.a2d1148746eb0e08bf672fb2bbdda35f.svg",
     "static/media/left-arrow.svg": "/massage/static/media/left-arrow.875047b29bae7084274c1fd00f75acf0.svg",
-    "main.f1e27f86.css.map": "/massage/static/css/main.f1e27f86.css.map",
-    "main.b1757810.js.map": "/massage/static/js/main.b1757810.js.map"
+    "main.37fabf4c.css.map": "/massage/static/css/main.37fabf4c.css.map",
+    "main.7d201acb.js.map": "/massage/static/js/main.7d201acb.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1e27f86.css",
-    "static/js/main.b1757810.js"
+    "static/css/main.37fabf4c.css",
+    "static/js/main.7d201acb.js"
   ]
 }
