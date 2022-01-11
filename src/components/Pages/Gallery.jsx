@@ -1,12 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import gallery1 from "../../img/gallery/gallery-1.jpg";
 import gallery2 from "../../img/gallery/gallery-2.jpg";
 
 import Context from "../Context/Context";
+import ModalWindow from "../ModalWindow/ModalWindow";
 
 const Gallery = () => {
-  const { setShowModal, setModalImages } = useContext(Context);
+  // const { setShowModal, setModalImages } = useContext(Context);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImages, setModalImages] = useState({
+    images: [],
+    index: null,
+  });
 
   const galleryImages = [];
 
@@ -22,7 +28,6 @@ const Gallery = () => {
     setModalImages({
       images: galleryImages.map((img) => img.img),
       index: galleryImages.indexOf(img),
-      location: window.location.href,
     });
 
     setShowModal(true);
@@ -44,6 +49,10 @@ const Gallery = () => {
           ))}
         </ul>
       </section>
+
+      {showModal ? (
+        <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />
+      ) : null}
     </main>
   );
 };

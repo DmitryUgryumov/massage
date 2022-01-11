@@ -14,7 +14,6 @@ const Slider = ({ images, showModalHandler }) => {
     showModalHandler({
       images: images.map((img) => img.img),
       index: index,
-      location: window.location.href,
     });
   };
 

@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Context from "../../Context/Context";
+import ModalWindow from "../../ModalWindow/ModalWindow";
 
 const ServicesItem = ({ service }) => {
-  const { setShowModal, setModalImages } = useContext(Context);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImages, setModalImages] = useState({
+    images: [],
+    index: null,
+  });
 
   const showModalHandler = () => {
     setModalImages({
       images: [service.img],
       index: 0,
-      location: window.location.href,
     });
 
     setShowModal(true);
@@ -40,6 +44,10 @@ const ServicesItem = ({ service }) => {
           <p>{service.time}</p>
         </div>
       </div>
+
+      {showModal ? (
+        <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />
+      ) : null}
     </li>
   );
 };

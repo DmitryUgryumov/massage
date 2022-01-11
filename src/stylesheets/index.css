@@ -41,10 +41,24 @@ a {
   cursor: pointer;
 }
 
-.map {
-  width: 80%;
-  height: 500px;
-  margin: 100px auto;
+.up-button_show {
+  cursor: pointer;
+  padding: 10px 20px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  opacity: 1;
+  transition: opacity 0.8s;
+}
+
+.up-button_hidden {
+  pointer-events: none;
+  padding: 10px 20px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.8s;
 }
 
 .y-map {

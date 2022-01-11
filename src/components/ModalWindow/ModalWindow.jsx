@@ -34,11 +34,10 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
 
   useEffect(() => {
     const pageHasScrollBar = !!(
-      document.body.offsetHeight - window.innerHeight
+      document.documentElement.offsetHeight - window.innerHeight
     );
 
     document.documentElement.addEventListener("keydown", modalKeyDownHandler);
-
     document.body.style.overflow = "hidden";
 
     if (pageHasScrollBar) {
@@ -115,7 +114,6 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
     <div className="modal" ref={modal} onClick={closeModal}>
       <div className="modal__container">
         <img
-          // src={modalImages.images[index].img}
           src={modalImages.images[index]}
           alt=""
           className="modal__img"

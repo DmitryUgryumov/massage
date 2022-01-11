@@ -9,7 +9,6 @@ const AboutDescription = ({ showModalHandler }) => {
     showModalHandler({
       images: [man1, man2, man3],
       index: 0,
-      location: window.location.href,
     });
   };
 
