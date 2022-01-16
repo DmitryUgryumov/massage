@@ -4,7 +4,7 @@ import gallery1 from "../../img/gallery/gallery-1.jpg";
 import gallery2 from "../../img/gallery/gallery-2.jpg";
 
 import Context from "../Context/Context";
-import ModalWindow from "../ModalWindow/ModalWindow";
+import ModalWindowImg from "../ModalWindow/ModalWindowImg";
 
 const Gallery = () => {
   // const { setShowModal, setModalImages } = useContext(Context);
@@ -51,7 +51,7 @@ const Gallery = () => {
       </section>
 
       {showModal ? (
-        <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />
+        <ModalWindowImg modalImages={modalImages} setShowModal={setShowModal} />
       ) : null}
     </main>
   );

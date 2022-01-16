@@ -26,7 +26,7 @@ const getScrollBarWidth = () => {
   return scrollWidth;
 };
 
-const ModalWindow = ({ modalImages, setShowModal }) => {
+const ModalWindowImg = ({ modalImages, setShowModal }) => {
   const [index, setIndex] = useState(modalImages.index);
   const img = useRef(null);
   const indexSpan = useRef(null);
@@ -143,4 +143,4 @@ const ModalWindow = ({ modalImages, setShowModal }) => {
   );
 };
 
-export default ModalWindow;
+export default ModalWindowImg;

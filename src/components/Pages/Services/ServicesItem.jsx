@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "../../Context/Context";
-import ModalWindow from "../../ModalWindow/ModalWindow";
+import ModalWindowImg from "../../ModalWindow/ModalWindowImg";
 
 const ServicesItem = ({ service }) => {
   const [showModal, setShowModal] = useState(false);
@@ -46,7 +46,7 @@ const ServicesItem = ({ service }) => {
       </div>
 
       {showModal ? (
-        <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />
+        <ModalWindowImg modalImages={modalImages} setShowModal={setShowModal} />
       ) : null}
     </li>
   );

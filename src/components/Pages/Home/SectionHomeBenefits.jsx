@@ -1,6 +1,7 @@
 import React from "react";
 
-import icon1 from "../../../img/home/icon-1.png";
+// import icon1 from "../../../img/home/icon-1.png";
+import icon1 from "../../../img/test/ninja.svg";
 
 const benefitsList = [
   {

@@ -19,9 +19,11 @@ $blue-3: #F0FFFF;
 
   &:hover {
     background: url($url-color);
-    background-size: cover;
+    background-size: 100%;
   }
 }
+
+
 
 #root {
   min-height: 100vh;
@@ -69,26 +71,40 @@ a {
 }
 .up-button {
   //transition: opacity .8s;
+  border: 1px blue solid;
+}
+
+@mixin up-button() {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 50px;
+  bottom: 70px;
+  transition: opacity .8s;
+  background: none;
+  border: none;
+
+  & {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .up-button_show {
+  @include up-button;
+
   cursor: pointer;
-  padding: 10px 20px;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
   opacity: 1;
-  transition: opacity .8s;
+
 }
 
 .up-button_hidden {
+  @include up-button;
+
   pointer-events: none;
-  padding: 10px 20px;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
   opacity: 0;
-  transition: opacity .8s;
 }
 
 
@@ -307,6 +323,45 @@ a {
         "../img/footer/social-icon-4-black.png",
         "../img/footer/social-icon-4.png"
     );
+  }
+}
+
+.modal-message {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      padding: 20px 30px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: black;
+      opacity: 0;
+      transition: opacity 1s;
+      //background: rgba(0, 100, 0, .1);
+    }
+  }
+
+  &_success {
+    p {
+      //opacity: 1;
+      border: 1px darkgreen solid;
+      background: rgba(0, 100, 0, .4);
+    }
+  }
+
+  &_failed {
+    p {
+      //opacity: 1;
+      border: 1px darkred solid;
+      background: rgba(139, 0, 0, .4);
+    }
   }
 }
 
@@ -830,29 +885,32 @@ a {
     transition: box-sahdow 20s;
   }
 
+
+
   &__form {
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+
     input{
       margin-top: 30px;
     }
 
-    input {
-      font-size: .8rem;
-      width: 80%;
-      border: none;
-      padding: 10px 5px;
-      background: none;
-      border-bottom: 3px $dark-1 solid;
-
-      &:focus {
-        outline: none;
-        border-bottom: 3px gray solid;
-      }
-    }
+    //input {
+    //  font-size: .8rem;
+    //  width: 80%;
+    //  border: none;
+    //  padding: 10px 5px;
+    //  background: none;
+    //  border-bottom: 3px $dark-1 solid;
+    //
+    //  &:focus {
+    //    outline: none;
+    //    border-bottom: 3px gray solid;
+    //  }
+    //}
 
     button {
       margin-top: 40px;
@@ -868,10 +926,33 @@ a {
       }
     }
 
-    .input_fail {
+  }
 
+  &__input {
+    font-size: .8rem;
+    width: 80%;
+    border: none;
+    padding: 10px 5px;
+    background: none;
+    border-bottom: 3px $dark-1 solid;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px gray solid;
     }
   }
+
+  &__input_failed {
+    border-bottom: 3px darkred solid;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px darkred solid;
+    }
+  }
+
+
+
 }
 
 

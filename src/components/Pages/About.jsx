@@ -6,7 +6,7 @@ import certificate2 from "../../img/about/certificate-2.jpg";
 import Context from "../Context/Context";
 import AboutDescription from "./About/AboutDescription";
 import Slider from "../Slider/Slider";
-import ModalWindow from "../ModalWindow/ModalWindow";
+import ModalWindowImg from "../ModalWindow/ModalWindowImg";
 
 const images = [
   { id: 1, img: certificate1 },
@@ -32,7 +32,7 @@ const About = () => {
         <Slider images={images} showModalHandler={showModalHandler} />
 
         {showModal ? (
-          <ModalWindow modalImages={modalImages} setShowModal={setShowModal} />
+          <ModalWindowImg modalImages={modalImages} setShowModal={setShowModal} />
         ) : null}
       </section>
     </main>

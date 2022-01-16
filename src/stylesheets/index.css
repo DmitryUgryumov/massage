@@ -41,24 +41,42 @@ a {
   cursor: pointer;
 }
 
+.up-button {
+  border: 1px blue solid;
+}
+
 .up-button_show {
-  cursor: pointer;
-  padding: 10px 20px;
+  width: 100px;
+  height: 100px;
   position: fixed;
-  right: 30px;
-  bottom: 30px;
-  opacity: 1;
+  right: 50px;
+  bottom: 70px;
   transition: opacity 0.8s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+}
+.up-button_show img {
+  width: 100%;
+  height: 100%;
 }
 
 .up-button_hidden {
-  pointer-events: none;
-  padding: 10px 20px;
+  width: 100px;
+  height: 100px;
   position: fixed;
-  right: 30px;
-  bottom: 30px;
-  opacity: 0;
+  right: 50px;
+  bottom: 70px;
   transition: opacity 0.8s;
+  background: none;
+  border: none;
+  pointer-events: none;
+  opacity: 0;
+}
+.up-button_hidden img {
+  width: 100%;
+  height: 100%;
 }
 
 .y-map {
@@ -218,7 +236,7 @@ a {
 }
 .footer__link:nth-child(1):hover {
   background: url("../img/footer/social-icon-1.png");
-  background-size: cover;
+  background-size: 100%;
 }
 .footer__link:nth-child(2) {
   background: url("../img/footer/social-icon-2-black.png");
@@ -226,7 +244,7 @@ a {
 }
 .footer__link:nth-child(2):hover {
   background: url("../img/footer/social-icon-2.png");
-  background-size: cover;
+  background-size: 100%;
 }
 .footer__link:nth-child(3) {
   background: url("../img/footer/social-icon-3-black.png");
@@ -234,7 +252,7 @@ a {
 }
 .footer__link:nth-child(3):hover {
   background: url("../img/footer/social-icon-3.png");
-  background-size: cover;
+  background-size: 100%;
 }
 .footer__link:nth-child(4) {
   background: url("../img/footer/social-icon-4-black.png");
@@ -242,7 +260,35 @@ a {
 }
 .footer__link:nth-child(4):hover {
   background: url("../img/footer/social-icon-4.png");
-  background-size: cover;
+  background-size: 100%;
+}
+
+.modal-message {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+.modal-message__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-message__container p {
+  padding: 20px 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: black;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.modal-message_success p {
+  border: 1px darkgreen solid;
+  background: rgba(0, 100, 0, 0.4);
+}
+.modal-message_failed p {
+  border: 1px darkred solid;
+  background: rgba(139, 0, 0, 0.4);
 }
 
 .services, .gallery,
@@ -641,18 +687,6 @@ a {
 .contacts__form input {
   margin-top: 30px;
 }
-.contacts__form input {
-  font-size: 0.8rem;
-  width: 80%;
-  border: none;
-  padding: 10px 5px;
-  background: none;
-  border-bottom: 3px #1c1c1c solid;
-}
-.contacts__form input:focus {
-  outline: none;
-  border-bottom: 3px gray solid;
-}
 .contacts__form button {
   margin-top: 40px;
   border: 2px #BACBD9 solid;
@@ -665,6 +699,26 @@ a {
 .contacts__form button:hover {
   background: #BACBD9;
 }
+.contacts__input {
+  font-size: 0.8rem;
+  width: 80%;
+  border: none;
+  padding: 10px 5px;
+  background: none;
+  border-bottom: 3px #1c1c1c solid;
+}
+.contacts__input:focus {
+  outline: none;
+  border-bottom: 3px gray solid;
+}
+.contacts__input_failed {
+  border-bottom: 3px darkred solid;
+}
+.contacts__input_failed:focus {
+  outline: none;
+  border-bottom: 3px darkred solid;
+}
+
 @keyframes home-slides {
   0% {
     opacity: 0;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const checkTel = (tel) => {
   if (tel.length === 1) {
@@ -19,51 +19,75 @@ const checkTel = (tel) => {
 
 const checkTelLength = (tel) => {
   return tel.slice(0, 2) === "+7" ? tel.length === 12 : tel.length === 11;
-  // if (tel.slice(0, 2) === '+7') {
-  //   return tel.length === 12
-  // } else {
-  //   return tel.length === 11
-  // }
 };
 
 const nameCheck = (name) => {
-  console.log(name.length, name.trim().length);
   if (!name.trim().length) {
     return false;
   }
   return name.trim().length >= 3;
 };
 
-const ContactsForm = () => {
+const ContactsForm = ({ showModalMessage, showMessage, setShowMessage }) => {
   const [inputValue, setInputValue] = useState({
     name: "",
     tel: "",
-    mail: "",
+    email: "",
     comment: "",
   });
+  const name = useRef(null);
+  const tel = useRef(null);
 
   const formHandler = (e) => {
     e.preventDefault();
 
+    name.current.className = "contacts__input";
+    tel.current.className = "contacts__input";
+
+    if (showMessage) {
+      setShowMessage(false);
+    }
+
     if (!nameCheck(inputValue.name)) {
-      alert("Введено неверное имя");
+      showModalMessage("Введено неверное имя", false);
+      // name.current.className = "contacts__input contacts__input_failed";
+      name.current.classList.add("contacts__input_failed");
+      name.current.focus();
       return;
     }
 
     if (!checkTelLength(inputValue.tel)) {
-      alert("Введен неверный телефон");
+      showModalMessage("Введен неверный телефон", false);
+      tel.current.classList.add("contacts__input_failed");
+      tel.current.focus();
       return;
     }
 
-    console.log(inputValue);
+    showModalMessage("Форма отправлена!", true);
+    // name.current.style.borderBottom = "none";
 
-    // alert("Форма отправлена");
-    // setInputValue({
-    //   name: "",
-    //   tel: "",
-    //   mail: "",
-    //   comment: "",
+    // fetch("../../../helpers/sendForm.php", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json;charset=utf-8",
+    //   },
+    //   body: JSON.stringify(inputValue),
+    // }).then((response) => {
+    //   if (!response.ok) {
+    //     Promise.reject("errorrrrrr").then((r) => alert("ошибка"));
+    //
+    //     return;
+    //   }
+    //
+    //   alert("Форма отправлена");
     // });
+
+    setInputValue({
+      name: "",
+      tel: "",
+      email: "",
+      comment: "",
+    });
   };
 
   const inputHandler = (e) => {
@@ -93,6 +117,8 @@ const ContactsForm = () => {
           name="name"
           onChange={inputHandler}
           value={inputValue.name}
+          ref={name}
+          className="contacts__input"
         />
         <input
           type="tel"
@@ -101,14 +127,17 @@ const ContactsForm = () => {
           name="tel"
           value={inputValue.tel}
           onChange={inputHandler}
+          ref={tel}
+          className="contacts__input"
         />
         <input
           type="email"
-          id="mail"
+          id="email"
           placeholder="Почта"
-          name="mail"
-          value={inputValue.mail}
+          name="email"
+          value={inputValue.email}
           onChange={inputHandler}
+          className="contacts__input"
         />
         <input
           type="text"
@@ -118,6 +147,7 @@ const ContactsForm = () => {
           value={inputValue.comment}
           onChange={inputHandler}
           list="comment-values"
+          className="contacts__input"
         />
         <datalist id="comment-values">
           <option value="Удобный вид связи: WhatsApp" />
