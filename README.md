@@ -1,4 +1,4 @@
-[DEMO](https://dmitryugryumov.github.io/massage/)
+[DEMO](https://dmitryugryumov.github.io/massage/) (the project is not finished)
 
 # Getting Started with Create React App
 
